@@ -40,7 +40,7 @@ public class ScrollStepDefenition {
 	   this.seleniumUtils.click(scrollPage.scrollLink);
 	}
 	
-	@When("The user accesses the scroll page {string}")
+	@Given("The user accesses the scroll page {string}")
 	public void theUserAccessesTheScrollPage(String string) {
 	    Assert.assertEquals(string, scrollPage.pageTitle.getText());
 	}
