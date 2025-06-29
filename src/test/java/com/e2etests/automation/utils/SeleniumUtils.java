@@ -20,6 +20,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -154,6 +155,28 @@ public class SeleniumUtils extends BasePage {
 	    Actions actions = new Actions(driver);
 	    actions.moveToElement(element);
 	    actions.doubleClick().perform();
+	}
+	
+	/**
+	 * method to copy paste a text from a field to a paste area
+	 * 
+	 * @param copyField field where text is to be copied
+	 */
+	public void copyText(WebElement copyField) {
+		//Actions act = new Actions(Setup.getDriver());
+		copyField.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		copyField.sendKeys(Keys.chord(Keys.CONTROL, "c"));
+	}
+	
+	/**
+	 * method to copy paste a text from a field to a paste area
+	 * 
+	 * @param pasteArea field where text is to be pasted
+	 */
+	public void pasteText(WebElement pasteArea) {
+		Actions act = new Actions(Setup.getDriver());
+		act.moveToElement(pasteArea).click();
+		pasteArea.sendKeys(Keys.chord(Keys.CONTROL, "v"));
 	}
 
 	/**
@@ -347,7 +370,7 @@ public class SeleniumUtils extends BasePage {
 	}
 
 	/**
-	 * methode read text.
+	 * method read text.
 	 *
 	 * @param elementAttr
 	 * @return string
@@ -359,7 +382,8 @@ public class SeleniumUtils extends BasePage {
 			return elementAttr.getText();
 		}
 	}
-
+	
+	
 	/**
 	 * methode Auto suggest : Below is the code to select the Option based on the
 	 * string passed in the Test. We are List as option can be more than one. By
