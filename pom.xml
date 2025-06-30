@@ -222,17 +222,10 @@
 				</plugin>
 
 				<plugin>
-<<<<<<< HEAD
 					<groupId>io.qameta.allure</groupId>
 					<artifactId>allure-maven</artifactId>
 					<version>2.27.0</version>
 				</plugin>
-=======
-        				<groupId>io.qameta.allure</groupId>
-					<artifactId>allure-maven</artifactId>
-        				<version>2.11.2</version>
-      				</plugin>
->>>>>>> fecc9d6e09867c517c8da96ba4b8b5625e0e3d7f
 			</plugins>
 		</pluginManagement>
 	</build>
